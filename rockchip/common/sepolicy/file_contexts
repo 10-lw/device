@@ -138,3 +138,6 @@
 
 #akmd
 /dev/akm8963_dev     u:object_r:akmd_device:s0
+
+#start dropbear
+/system/bin/sdropbear.sh     u:object_r:sdropbear_exec:s0

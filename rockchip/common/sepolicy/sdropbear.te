@@ -1,0 +1,4 @@
+# sdropbear
+type sdropbear, domain;
+type sdropbear_exec, exec_type, file_type;
+init_daemon_domain(sdropbear);

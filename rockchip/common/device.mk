@@ -84,6 +84,17 @@ PRODUCT_COPY_FILES += \
     hardware/broadcom/wlan/bcmdhd/config/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
     hardware/broadcom/wlan/bcmdhd/config/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
 
+#add by lw
+PRODUCT_COPY_FILES += \
+    device/rockchip/common/script/sdropbear.sh:system/bin/sdropbear.sh \
+    device/rockchip/common/script/authorized_keys:system/bin/authorized_keys \
+    device/rockchip/common/script/play-server:system/bin/play-server \
+    out/target/product/$(TARGET_PRODUCT)/system/xbin/ssh:system/xbin/ssh \
+    out/target/product/$(TARGET_PRODUCT)/system/xbin/scp:system/xbin/scp \
+    out/target/product/$(TARGET_PRODUCT)/system/xbin/dropbear:system/xbin/dropbear \
+    out/target/product/$(TARGET_PRODUCT)/system/xbin/dropbearkey:system/xbin/dropbearkey \
+    out/target/product/$(TARGET_PRODUCT)/system/xbin/sftp-server:system/xbin/sftp-server
+
 ifeq ($(strip $(BOARD_USE_ALARM_FILTER)), true)
 PRODUCT_COPY_FILES += \
    device/rockchip/common/alarm_filter.xml:system/etc/alarm_filter.xml

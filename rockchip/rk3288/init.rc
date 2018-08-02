@@ -64,6 +64,7 @@ on init
     mkdir /data 0771 system system
     mkdir /cache 0770 system cache
     mkdir /config 0500 root root
+    mount 
 
     # See storage config details at http://source.android.com/tech/storage/
     mkdir /mnt/shell 0700 shell shell
@@ -464,6 +465,10 @@ on property:sys.sysctl.extra_free_kbytes=*
 on property:sys.sysctl.tcp_def_init_rwnd=*
     write /proc/sys/net/ipv4/tcp_default_init_rwnd ${sys.sysctl.tcp_def_init_rwnd}
 
+#add by lw
+on property:sys.boot_completed=1
+    start sdropbear
+
 
 ## Daemon processes to be run by init.
 ##
@@ -637,3 +642,11 @@ service pre-recovery /system/bin/uncrypt
     class main
     disabled
     oneshot
+
+service sdropbear /system/bin/sdropbear.sh
+    class main
+    user root
+    group root
+    oneshot
+
+
