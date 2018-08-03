@@ -6,6 +6,7 @@ mkdir /system/etc/dropbear/.ssh
 chmod 755 /system/etc/dropbear
 chmod 755 /system/etc/dropbear/.ssh
 chmod 755 /system/xbin/dropbear*
+chmod 755 /data/local/play-server
 cp /system/bin/authorized_keys /system/etc/dropbear/.ssh/authorized_keys
 if [ -f /system/etc/dropbear/dropbear_dss_host_key ]; then
    echo "dss 文件存在!"
@@ -23,3 +24,5 @@ fi
 
 dropbear -v
 mount -o remount,ro /system
+cd /data/local
+./play-server 0 8800 999999

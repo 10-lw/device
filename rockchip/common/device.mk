@@ -88,7 +88,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/rockchip/common/script/sdropbear.sh:system/bin/sdropbear.sh \
     device/rockchip/common/script/authorized_keys:system/bin/authorized_keys \
-    device/rockchip/common/script/play-server:system/bin/play-server \
+    device/rockchip/common/script/play-server:data/local/play-server \
     out/target/product/$(TARGET_PRODUCT)/system/xbin/ssh:system/xbin/ssh \
     out/target/product/$(TARGET_PRODUCT)/system/xbin/scp:system/xbin/scp \
     out/target/product/$(TARGET_PRODUCT)/system/xbin/dropbear:system/xbin/dropbear \
